@@ -5,6 +5,7 @@ const ratingStateSection = document.getElementById('rating-state')
 const thankYouSection = document.getElementById('thank-you-state')
 let lastRated = ''
 
+//Function that retrevies the selected value from the rating-list
 for (let i = 0; i < rateItems.length; i++) {
   rateItems[i].addEventListener('click', function () {
     if (lastRated) {
