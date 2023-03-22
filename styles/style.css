@@ -1,11 +1,137 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --very-dark-blue: hsl(216, 12%, 8%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --blue: #2d3743;
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+
+    --default-font: 'Overpass', sans-serif;
+}
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: var(--default-font);
+    font-size: 15px;
+}
+
+img, picture {
+    max-width: 100%;
+    display: block;
 }
 
 body {
     min-height: 100vh;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: linear-gradient(to bottom, var(--dark-blue), var(--very-dark-blue));
+    max-width: 28.125rem;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+section#rating-state {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+}
+
+.title {
+    font-size: 2em;
+    color: var(--white);
+}
+
+.description {
+    color: var(--light-grey);
+    text-align: center;
+}
+
+.rating-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    list-style: none;
+}
+
+.list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-grey);
+    background-color: var(--blue);
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.list-item:is(:hover, :focus-visible){
+    color: white;
+    background-color: var(--medium-grey);
+}
+
+.list-item.rate-selected {
+    color: white;
+    background-color: var(--orange);
+} 
+
+button#submit-button {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+button#submit-button:hover {
+    color: var(--orange);
+    background-color: white;
+}
+
+section#thank-you-state {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px 0px;
+    padding: 10px;
+}
+
+.rate-result {
+    display: flex;
+    align-items: center;
+    color: var(--orange);
+    background-color: var(--blue);
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.rate-result p {
+    margin: 3px 10px 0px 10px;
 }
